@@ -1,0 +1,11 @@
+#!/bin/bash
+
+USER=Priyal41
+read -p "Enter the Command:" ls -led
+for host in $(tr ',' $'\n' <<< $1)
+do
+#echo $host
+ssh -o StrictHostKeyChecking=no -i <ssh-key-path> $USER@$host $command
+done
+
+To use the above script user name and SSH Key for all the server should be same.
